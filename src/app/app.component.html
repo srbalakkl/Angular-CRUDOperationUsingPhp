@@ -1,0 +1,28 @@
+<div>
+  <form class="example-form" [formGroup]="fg">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name of the Contractor</mat-label>
+      <input formControlName="contractor_name" matInput placeholder="Ex. bala" value="Sushi">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Work Order No.</mat-label>
+      <input formControlName="wo_number" matInput placeholder="Ex. Pizza" value="Sushi">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Work Order Date</mat-label>
+      <input formControlName="wo_date" matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Work Description</mat-label>
+      <textarea formControlName="wo_desc" matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+
+    <button type="button" mat-stroked-button (click)="saveOrders()">Save Orders</button>
+  </form>
+</div>
