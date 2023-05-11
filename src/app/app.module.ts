@@ -12,12 +12,15 @@ import {MAT_CHECKBOX_DEFAULT_OPTIONS} from "@angular/material/checkbox";
 import {MAT_RADIO_DEFAULT_OPTIONS} from "@angular/material/radio";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    HttpClientModule,//<- to use http client we have to import this module
+    // otherwise 'NullInjectorError' will be thrown an error.
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -25,7 +28,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [
     {
